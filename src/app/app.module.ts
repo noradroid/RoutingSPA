@@ -5,23 +5,23 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { HeroesListComponent } from './heroes-list/heroes-list.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: 'crisis', component: CrisisListComponent },
-  { path: 'heroes', component: HeroesListComponent }
-]
+  { path: 'heroes', component: HeroesListComponent },
+  { path: '**', component: PageNotFoundComponent },
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     CrisisListComponent,
-    HeroesListComponent
+    HeroesListComponent,
+    PageNotFoundComponent,
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(routes)
-  ],
+  imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
