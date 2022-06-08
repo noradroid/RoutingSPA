@@ -1,1 +1,21 @@
-<h1>{{title}}</h1>
+<div class="text-center">
+    <h1>{{title}}</h1>
+</div>
+
+<nav class="text-center">
+	<a class="button" routerLink="/crisis" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Crisis Center</a> |
+	<a class="button" routerLink="/heroes" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Heroes</a>
+</nav>
+
+
+<div class="container">
+    <h3>Whatever from the routing shows here :)</h3>
+    <div class="container" style="background-color: orange">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<div class="container">
+    <app-crisis-list></app-crisis-list>
+    <app-heroes-list></app-heroes-list>
+</div>
